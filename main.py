@@ -1,4 +1,4 @@
-def ColorPrint(text, style="0", color="37", background_color="37"):
+def Color8Bit(text, style="0", color="37", background_color="37"):
     # Diccionario de colores en inglés a códigos ANSI
     color_codes = {
         "black": "30",
@@ -41,20 +41,18 @@ def ColorPrint(text, style="0", color="37", background_color="37"):
     else:
         print(text)
 
+
+def ColorRGB(text, foreground=(255, 255, 255), background=(0, 0, 0)):
+    fg_r, fg_g, fg_b = foreground
+    bg_r, bg_g, bg_b = background
+
+    escape_sequence = f"\033[38;2;{fg_r};{fg_g};{fg_b}m\033[48;2;{bg_r};{bg_g};{bg_b}m"
+    reset_sequence = "\033[0m\n"
+    colored_text = f"{escape_sequence}{text}{reset_sequence}"
+
+    print(colored_text, end="")
+
+
 # Ejemplo de uso:
 #ColorPrint("Texto en rojo")
-
-colors_to_test = [
-    "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"
-]
-
-styles_to_test = [
-    "bold", "italic", "underline", "blink", "reverse"
-]
-
-# Prueba todos los colores y estilos
-for style in styles_to_test:
-    for color in colors_to_test:
-        for background_color in colors_to_test:
-            formatted_text = f"Style: {style}, Text Color: {color}, Background: {background_color}"
-            ColorPrint(formatted_text, style=style, color=color)
+#ColorRGB("Texto con colores RGB")
