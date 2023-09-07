@@ -1,5 +1,5 @@
 def Color8Bits(text, foreground="reset", background="reset", styles=[]):
-    
+
     color_codes = {
         "black": 0,
         "red": 1,
@@ -30,10 +30,10 @@ def Color8Bits(text, foreground="reset", background="reset", styles=[]):
     style_sequence = ";".join(str(style_codes.get(style.lower(), "")) for style in styles)
     
     escape_sequence = f"\x1b[{style_sequence};38;5;{foreground_code}m\x1b[48;5;{background_code}m"
-    reset_sequence = "\x1b[0m\n"
+    reset_sequence = "\x1b[0m"
     colored_text = f"{escape_sequence}{text}{reset_sequence}"
 
-    print(colored_text, end="")
+    print(colored_text)
 
 
 def ColorRGB(text, foreground=(255, 255, 255), background=(0, 0, 0)):
@@ -41,12 +41,13 @@ def ColorRGB(text, foreground=(255, 255, 255), background=(0, 0, 0)):
     bg_r, bg_g, bg_b = background
 
     escape_sequence = f"\033[38;2;{fg_r};{fg_g};{fg_b}m\033[48;2;{bg_r};{bg_g};{bg_b}m"
-    reset_sequence = "\033[0m\n"
+    reset_sequence = "\033[0m"
     colored_text = f"{escape_sequence}{text}{reset_sequence}"
 
-    print(colored_text, end="")
+    print(colored_text)
+    print("hola")
 
 
 # Ejemplo de uso:
-#ColorPrint("Texto en rojo")
+#Color8Bits("Texto con colores", foreground="red", styles=["bold", "underline"])
 #ColorRGB("Texto con colores RGB")
