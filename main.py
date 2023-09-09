@@ -90,7 +90,7 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
     colored_text = f"{escape_sequence}{text}{reset_sequence}"
 
     print(colored_text)
-
+Example Usage:
 
 
 # Example usage:
