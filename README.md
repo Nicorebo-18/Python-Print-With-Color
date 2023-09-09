@@ -25,7 +25,7 @@ def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
     """
 ```
 
-###Example Usage:
+#### Example Usage:
 
 ```python
 PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
@@ -51,7 +51,7 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
     """
 ```
 
-###Example Usage:
+#### Example Usage:
 
 ```python
 PrintColorRGB("RGB colored text example", styles=["bold", "strikethrough"])
