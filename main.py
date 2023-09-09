@@ -95,6 +95,4 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
 
 # Example usage:
 PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
-PrintColorRGB("RGB colored text example", styles=["strikethrough"])
-
-PrintColorRGB("RGB colored text example")
+PrintColorRGB("RGB colored text example", styles=["bold", "strikethrough"])
