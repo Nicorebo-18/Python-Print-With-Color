@@ -90,9 +90,7 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
     colored_text = f"{escape_sequence}{text}{reset_sequence}"
 
     print(colored_text)
-Example Usage:
-
 
 # Example usage:
-PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
-PrintColorRGB("RGB colored text example", styles=["bold", "strikethrough"])
+#PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
+#PrintColorRGB("RGB colored text example", styles=["bold", "strikethrough"])
