@@ -1,5 +1,17 @@
-def Color8Bits(text, foreground="reset", background="reset", styles=[]):
+def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
+    """
+    Print colored text using 8-bit color codes and optional text styles.
 
+    Parameters:
+    - text (str): The text to be colored.
+    - foreground (str, optional): The foreground color name or code (default is "reset").
+    - background (str, optional): The background color name or code (default is "reset").
+    - styles (list, optional): A list of text styles to apply (e.g., ["bold", "italic"]).
+
+    Color and style codes are specified using string names or codes.
+    Supported color names: "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", "default", "reset".
+    Supported style names: "bold", "dim", "italic", "underline", "blink", "reverse", "hidden", "strikethrough".
+    """
     color_codes = {
         "black": 0,
         "red": 1,
@@ -36,7 +48,17 @@ def Color8Bits(text, foreground="reset", background="reset", styles=[]):
     print(colored_text)
 
 
-def ColorRGB(text, foreground=(255, 255, 255), background=(0, 0, 0)):
+def PrintColorRGB(text, foreground=(255, 255, 255), background=(0, 0, 0)):
+    """
+    Print colored text using RGB color codes.
+
+    Parameters:
+    - text (str): The text to be colored.
+    - foreground (tuple, optional): RGB values for the foreground color (default is white).
+    - background (tuple, optional): RGB values for the background color (default is black).
+
+    RGB values are specified as tuples with three integers in the range 0-255.
+    """
     fg_r, fg_g, fg_b = foreground
     bg_r, bg_g, bg_b = background
 
@@ -45,9 +67,8 @@ def ColorRGB(text, foreground=(255, 255, 255), background=(0, 0, 0)):
     colored_text = f"{escape_sequence}{text}{reset_sequence}"
 
     print(colored_text)
-    print("hola")
 
 
-# Ejemplo de uso:
-#Color8Bits("Texto con colores", foreground="red", styles=["bold", "underline"])
-#ColorRGB("Texto con colores RGB")
+# Example usage:
+PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
+PrintColorRGB("RGB colored text example")
