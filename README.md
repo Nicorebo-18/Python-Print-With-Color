@@ -4,6 +4,8 @@ These Python functions allow you to print text with various colors and styles in
 
 With these functions, you can make your terminal output more engaging and colorful. Experiment with different colors and styles to create visually appealing text. 😊🚀
 
+---
+
 ## Function: Print Color 8 Bits
 
 `PrintColor8Bits` prints text using 8-bit color codes and optional text styles.
@@ -25,11 +27,22 @@ def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
     """
 ```
 
-#### Example Usage:
+
+#### Example Usage (8-bit Colors):
 
 ```python
-PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
+# Example 1: Print 8-bit colored text with bold style and a custom background color (e.g., green)
+PrintColor8Bits("Bold text with green background", foreground="white", background="green", styles=["bold"])
+
+# Example 2: Print 8-bit colored text with italic style and a custom foreground color (e.g., yellow)
+PrintColor8Bits("Italic text with yellow foreground", foreground="yellow", styles=["italic"])
+
+# Example 3: Print 8-bit colored text with underline style, a custom foreground color (e.g., red),
+# and a custom background color (e.g., blue)
+PrintColor8Bits("Underlined text with red foreground and blue background", foreground="red", background="blue", styles=["underline"])
 ```
+
+---
 
 ## Function: Print Color RGB 🌟
 
@@ -51,8 +64,16 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
     """
 ```
 
-#### Example Usage:
+#### Example Usage (RGB Colors):
 
 ```python
-PrintColorRGB("RGB colored text example", styles=["bold", "strikethrough"])
+# Example 4: Print RGB colored text with bold style and a custom background color (e.g., purple)
+PrintColorRGB("Bold text with purple background", foreground=(255, 255, 255), background=(128, 0, 128), styles=["bold"])
+
+# Example 5: Print RGB colored text with italic style and a custom foreground color (e.g., orange)
+PrintColorRGB("Italic text with orange foreground", foreground=(255, 165, 0), styles=["italic"])
+
+# Example 6: Print RGB colored text with underline style, a custom foreground color (e.g., teal),
+# and a custom background color (e.g., navy blue)
+PrintColorRGB("Underlined text with teal foreground and navy blue background", foreground=(0, 128, 128), background=(0, 0, 128), styles=["underline"])
 ```
