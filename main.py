@@ -48,27 +48,53 @@ def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
     print(colored_text)
 
 
-def PrintColorRGB(text, foreground=(255, 255, 255), background=(0, 0, 0)):
+def PrintColorRGB(text, foreground=None, background=None, styles=[]):
     """
-    Print colored text using RGB color codes.
+    Print colored text using RGB color codes and optional text styles.
 
     Parameters:
     - text (str): The text to be colored.
-    - foreground (tuple, optional): RGB values for the foreground color (default is white).
-    - background (tuple, optional): RGB values for the background color (default is black).
+    - foreground (tuple, optional): RGB values for the foreground color (default is None).
+    - background (tuple, optional): RGB values for the background color (default is None).
+    - styles (list, optional): A list of text styles to apply (e.g., ["bold", "italic"]).
 
     RGB values are specified as tuples with three integers in the range 0-255.
+    Supported style names: "bold", "dim", "italic", "underline", "blink", "reverse", "hidden", "strikethrough".
     """
-    fg_r, fg_g, fg_b = foreground
-    bg_r, bg_g, bg_b = background
+    style_codes = {
+        "bold": 1,
+        "dim": 2,
+        "italic": 3,
+        "underline": 4,
+        "blink": 5,
+        "reverse": 7,
+        "hidden": 8,
+        "strikethrough": 9
+    }
 
-    escape_sequence = f"\033[38;2;{fg_r};{fg_g};{fg_b}m\033[48;2;{bg_r};{bg_g};{bg_b}m"
+    style_sequence = ";".join(str(style_codes.get(style.lower(), "")) for style in styles)
+
+    escape_sequence = f"\033[{style_sequence}"
+    
+    if foreground:
+        fg_r, fg_g, fg_b = foreground
+        escape_sequence += f";38;2;{fg_r};{fg_g};{fg_b}"
+
+    if background:
+        bg_r, bg_g, bg_b = background
+        escape_sequence += f";48;2;{bg_r};{bg_g};{bg_b}"
+
+    escape_sequence += "m"
+
     reset_sequence = "\033[0m"
     colored_text = f"{escape_sequence}{text}{reset_sequence}"
 
     print(colored_text)
 
 
+
 # Example usage:
 PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
+PrintColorRGB("RGB colored text example", styles=["strikethrough"])
+
 PrintColorRGB("RGB colored text example")
