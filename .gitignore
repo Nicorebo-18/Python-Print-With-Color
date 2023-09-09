@@ -1,2 +1,7 @@
 #Test Directory
-**/test
+**/dist
+**/tests
+**/PythonPrintColors.egg-info
+**.pypirc
+**.cfg
+**.toml
