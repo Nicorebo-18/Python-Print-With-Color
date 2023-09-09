@@ -4,8 +4,29 @@ These Python functions allow you to print text with various colors and styles in
 
 With these functions, you can make your terminal output more engaging and colorful. Experiment with different colors and styles to create visually appealing text. 😊🚀
 
----
+_Note: To ensure the proper functionality of these functions, it is important that your terminal supports the ANSI standard for colored text formatting. Make sure your console is ANSI-compatible before using these functions to achieve the desired effect._
 
+#### Supported Python Versions
+- Python 3.6+
+
+---
+## Installing
+
+If you have pip on your system, you can simply install or upgrade the Python Module:
+
+`pip install -U PythonPrintColors`
+
+---
+## Usage
+To import the functions inside teh package simply use `from PythonPrintColors import *` as shown in the example:
+```python
+from PythonPrintColors import *
+
+PrintColor8Bits("8 Bit colored text example", foreground="red", background="white", styles=["italic", "underline"])
+PrintColorRGB("RGB colored text example", foreground=(0, 128, 128), background=(0, 0, 128), styles=["underline"])
+```
+
+---
 ## Function: Print Color 8 Bits
 
 `PrintColor8Bits` prints text using 8-bit color codes and optional text styles.
@@ -28,7 +49,7 @@ def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
 ```
 
 
-#### Example Usage (8-bit Colors):
+##### Example Usage (8-bit Colors):
 
 ```python
 # Example 1: Print 8-bit colored text with bold style and a custom background color (e.g., green)
@@ -64,7 +85,7 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
     """
 ```
 
-#### Example Usage (RGB Colors):
+##### Example Usage (RGB Colors):
 
 ```python
 # Example 4: Print RGB colored text with bold style and a custom background color (e.g., purple)
