@@ -14,13 +14,13 @@ _Note: To ensure the proper functionality of these functions, it is important th
 
 If you have pip on your system, you can simply install or upgrade the Python Module:
 
-`pip install -U PythonPrintColors`
+`pip install -U python_print_color`
 
 ---
 ## Usage
-To import the functions inside teh package simply use `from PythonPrintColors import *` as shown in the example:
+To import the functions inside teh package simply use `from python_print_color import *` as shown in the example:
 ```python
-from PythonPrintColors import *
+from python_print_color import *
 
 print_color_8bits("8 Bit colored text example", foreground="red", background="white", styles=["italic", "underline"])
 print_color_rgb("RGB colored text example", foreground=(0, 128, 128), background=(0, 0, 128), styles=["underline"])
