@@ -1,4 +1,28 @@
-def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
+#########################################################################################################
+#                                                                                                       #
+#         _____       _   _                   _____      _       _      _____      _                    #
+#        |  __ \     | | | |                 |  __ \    (_)     | |    / ____|    | |                   #
+#        | |__) |   _| |_| |__   ___  _ __   | |__) | __ _ _ __ | |_  | |     ___ | | ___  _ __         #
+#        |  ___/ | | | __| '_ \ / _ \| '_ \  |  ___/ '__| | '_ \| __| | |    / _ \| |/ _ \| '__|        #
+#        | |   | |_| | |_| | | | (_) | | | | | |   | |  | | | | | |_  | |___| (_) | | (_) | |           #
+#        |_|    \__, |\__|_| |_|\___/|_| |_| |_|   |_|  |_|_| |_|\__|  \_____\___/|_|\___/|_|           #
+#                __/ |                                                                                  #
+#               |___/                                                                                   #
+#                                                                                                       #
+#                                     -----------------------                                           #
+#                                  Module created by @Nicorebo-18                                       #
+#                                                                                                       #
+#                                     Documentation & Examples:                                         #
+#                       https://github.com/Nicorebo-18/Python-Print-With-Color                          #
+#                                     -----------------------                                           #
+#                                                                                                       #
+#########################################################################################################
+
+
+
+# Print colored text using 8-bit color codes and optional text styles.
+
+def print_color_8bits(text, foreground="reset", background="reset", styles=[]):
     """
     Print colored text using 8-bit color codes and optional text styles.
 
@@ -48,7 +72,9 @@ def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
     print(colored_text)
 
 
-def PrintColorRGB(text, foreground=None, background=None, styles=[]):
+# Print colored text using RGB color codes and optional text styles.
+
+def print_color_rgb(text, foreground=None, background=None, styles=[]):
     """
     Print colored text using RGB color codes and optional text styles.
 
@@ -73,7 +99,6 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
     }
 
     style_sequence = ";".join(str(style_codes.get(style.lower(), "")) for style in styles)
-
     escape_sequence = f"\033[{style_sequence}"
     
     if foreground:
@@ -85,12 +110,11 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
         escape_sequence += f";48;2;{bg_r};{bg_g};{bg_b}"
 
     escape_sequence += "m"
-
     reset_sequence = "\033[0m"
     colored_text = f"{escape_sequence}{text}{reset_sequence}"
 
     print(colored_text)
 
-# Example usage:
-#PrintColor8Bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
-#PrintColorRGB("RGB colored text example", styles=["bold", "strikethrough"])
+#    --------------         Example usage codes       ------------------
+# print_color_8bits("Colored text example", foreground="red", background="white", styles=["italic", "underline"])
+# print_color_rgb("RGB colored text example", styles=["bold", "strikethrough"])

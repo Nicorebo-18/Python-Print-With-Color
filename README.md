@@ -22,17 +22,17 @@ To import the functions inside teh package simply use `from PythonPrintColors im
 ```python
 from PythonPrintColors import *
 
-PrintColor8Bits("8 Bit colored text example", foreground="red", background="white", styles=["italic", "underline"])
-PrintColorRGB("RGB colored text example", foreground=(0, 128, 128), background=(0, 0, 128), styles=["underline"])
+print_color_8bits("8 Bit colored text example", foreground="red", background="white", styles=["italic", "underline"])
+print_color_rgb("RGB colored text example", foreground=(0, 128, 128), background=(0, 0, 128), styles=["underline"])
 ```
 
 ---
 ## Function: Print Color 8 Bits
 
-`PrintColor8Bits` prints text using 8-bit color codes and optional text styles.
+`print_color_8bits` prints text using 8-bit color codes and optional text styles.
 
 ```python
-def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
+def print_color_8bits(text, foreground="reset", background="reset", styles=[]):
     """
     Print colored text using 8-bit color codes and optional text styles.
 
@@ -53,24 +53,24 @@ def PrintColor8Bits(text, foreground="reset", background="reset", styles=[]):
 
 ```python
 # Example 1: Print 8-bit colored text with bold style and a custom background color (e.g., green)
-PrintColor8Bits("Bold text with green background", foreground="white", background="green", styles=["bold"])
+print_color_8bits("Bold text with green background", foreground="white", background="green", styles=["bold"])
 
 # Example 2: Print 8-bit colored text with italic style and a custom foreground color (e.g., yellow)
-PrintColor8Bits("Italic text with yellow foreground", foreground="yellow", styles=["italic"])
+print_color_8bits("Italic text with yellow foreground", foreground="yellow", styles=["italic"])
 
 # Example 3: Print 8-bit colored text with underline style, a custom foreground color (e.g., red),
 # and a custom background color (e.g., blue)
-PrintColor8Bits("Underlined text with red foreground and blue background", foreground="red", background="blue", styles=["underline"])
+print_color_8bits("Underlined text with red foreground and blue background", foreground="red", background="blue", styles=["underline"])
 ```
 
 ---
 
 ## Function: Print Color RGB 🌟
 
-`PrintColorRGB` prints text using RGB color codes and optional text styles.
+`print_color_rgb` prints text using RGB color codes and optional text styles.
 
 ```python
-def PrintColorRGB(text, foreground=None, background=None, styles=[]):
+def print_color_rgb(text, foreground=None, background=None, styles=[]):
     """
     Print colored text using RGB color codes and optional text styles.
 
@@ -89,12 +89,12 @@ def PrintColorRGB(text, foreground=None, background=None, styles=[]):
 
 ```python
 # Example 4: Print RGB colored text with bold style and a custom background color (e.g., purple)
-PrintColorRGB("Bold text with purple background", foreground=(255, 255, 255), background=(128, 0, 128), styles=["bold"])
+print_color_rgb("Bold text with purple background", foreground=(255, 255, 255), background=(128, 0, 128), styles=["bold"])
 
 # Example 5: Print RGB colored text with italic style and a custom foreground color (e.g., orange)
-PrintColorRGB("Italic text with orange foreground", foreground=(255, 165, 0), styles=["italic"])
+print_color_rgb("Italic text with orange foreground", foreground=(255, 165, 0), styles=["italic"])
 
 # Example 6: Print RGB colored text with underline style, a custom foreground color (e.g., teal),
 # and a custom background color (e.g., navy blue)
-PrintColorRGB("Underlined text with teal foreground and navy blue background", foreground=(0, 128, 128), background=(0, 0, 128), styles=["underline"])
+print_color_rgb("Underlined text with teal foreground and navy blue background", foreground=(0, 128, 128), background=(0, 0, 128), styles=["underline"])
 ```
